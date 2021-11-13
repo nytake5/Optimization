@@ -10,7 +10,7 @@ namespace Optimization
             
             double a = double.Parse(Console.ReadLine());
             double b = double.Parse(Console.ReadLine());
-            double E = 0.001;
+            double E = 0.01;
             /*
             Console.WriteLine("Метод Дихотомии");
             Laba2.MethodDechotomia(a, b, E);
