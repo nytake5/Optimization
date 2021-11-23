@@ -102,7 +102,6 @@ namespace Optimization
             x = (a + b) / 2;
 
             Console.WriteLine($"x = {x:f3} y = {Func(x):f4}");
-
         }
 
         public static void MethodParabol(double a, double b, double E)

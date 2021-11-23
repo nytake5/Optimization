@@ -122,7 +122,20 @@ namespace Optimization
             }
             Console.WriteLine($"x = {x:f4} y = {Func2(x):f4}");
         }
-
+        //метод для поиска константы липшица
+        static double LFunc(double a, double b, double E)
+        {
+            double res, L = 0;
+            for (double i = a + E; i <= b; i += E)
+            {
+                res = Math.Abs(Func2(i + E) - Func2(i)) / E;
+                if (res > a)
+                {
+                    L = res;
+                }
+            }
+            return L;
+        }
 
         static double Func(double x)
         {
@@ -141,18 +154,6 @@ namespace Optimization
         {
             return (x + 2) * (x + 2) * (x - 1) * (x - 2) - 1;
         }
-        static double LFunc(double a, double b, double E)
-        {
-            double res, L = 0;
-            for (double i = a + E; i <= b; i += E)
-            {
-                res = Math.Abs(Func2(i + E) - Func2(i)) / E;
-                if (res > a)
-                {
-                    L = res;
-                }
-            }
-            return L;
-        }
+        
     }
 }
